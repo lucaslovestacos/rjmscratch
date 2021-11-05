@@ -22,7 +22,7 @@ class ScratchClip {
         };
     }
     
-    addToClip(text) {
+    addToClip({text}) {
         navigator.clipboard.writeText(text);
     }
     
