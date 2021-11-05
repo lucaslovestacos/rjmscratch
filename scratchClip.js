@@ -19,8 +19,8 @@ class ScratchClip {
                             }
                         }
                 ],
-        };
-    }
+        }
+    };
     
     addToClip({text}) {
         navigator.clipboard.writeText(text);
