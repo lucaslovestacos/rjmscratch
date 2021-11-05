@@ -1,3 +1,5 @@
+header(‘Content-Type: application/javascript‘);
+
 class ScratchClip {
     constructor() {
     }
