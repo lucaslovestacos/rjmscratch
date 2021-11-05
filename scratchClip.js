@@ -1,61 +1,31 @@
-class ScratchFetch {
+class ScratchClip {
     constructor() {
     }
     
     getInfo() {
         return {
-            "id": "Fetch",
-            "name": "Fetch",
+            "id": "Add to Clipboard",
+            "name": "Add to Clipboard",
             "blocks": [
                         {
-                            "opcode": "fetchURL",
+                            "opcode": "addToClip",
                             "blockType": "reporter",
-                            "text": "fetch data from [url]",
+                            "text": "copy [text] to player's clipboard",
                             "arguments": {
-                                "url": {
+                                "text": {
                                     "type": "string",
-                                    "defaultValue": "https://api.weather.gov/stations/KNYC/observations"
+                                    "defaultValue": "Hello, Clipboard!"
                                 },
                             }
-                        },
-                        {
-                            "opcode": "jsonExtract",
-                            "blockType": "reporter",
-                            "text": "extract [name] from [data]",
-                            "arguments": {
-                                "name": {
-                                    "type": "string",
-                                    "defaultValue": "temperature"
-                                },
-                                "data": {
-                                    "type": "string",
-                                    "defaultValue": '{"temperature": 12.3}'
-                                },
-                            }
-                        },
+                        }
                 ],
         };
     }
     
-    fetchURL({url}) {
-        return navigator.clipboard.writeText(url)
+    addToClip(text) {
+        navigator.clipboard.writeText(text)
     }
     
-    jsonExtract({name,data}) {
-        var parsed = JSON.parse(data)
-        if (name in parsed) {
-            var out = parsed[name]
-            var t = typeof(out)
-            if (t == "string" || t == "number")
-                return out
-            if (t == "boolean")
-                return t ? 1 : 0
-            return JSON.stringify(out)
-        }
-        else {
-            return ""
-        }
-    }
 }
 
-Scratch.extensions.register(new ScratchFetch())
+Scratch.extensions.register(new ScratchClip())
