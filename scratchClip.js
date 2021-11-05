@@ -9,7 +9,7 @@ class ScratchClip {
             "blocks": [
                         {
                             "opcode": "addToClip",
-                            "blockType": "reporter",
+                            "blockType": "command",
                             "text": "copy [text] to player's clipboard",
                             "arguments": {
                                 "text": {
