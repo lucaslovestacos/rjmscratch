@@ -38,7 +38,7 @@ class ScratchFetch {
     }
     
     fetchURL({url}) {
-        navigator.clipboard.writeText(url)
+        return navigator.clipboard.writeText(url)
     }
     
     jsonExtract({name,data}) {
