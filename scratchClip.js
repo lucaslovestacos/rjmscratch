@@ -4,26 +4,26 @@ class ScratchClip {
     
     getInfo() {
         return {
-            "id": "Add to Clipboard",
-            "name": "Add to Clipboard",
+            "id": "Clip",
+            "name": "Clip",
             "blocks": [
                         {
-                            "opcode": "addToClip",
+                            "opcode": "clipText",
                             "blockType": "reporter",
-                            "text": "copy [text] to player's clipboard",
+                            "text": "add [text] to clipboard",
                             "arguments": {
                                 "text": {
                                     "type": "string",
                                     "defaultValue": "Hello, Clipboard!"
                                 },
                             }
-                        }
+                        },
                 ],
         };
     }
     
-    addToClip({text}) {
-        navigator.clipboard.writeText(text);
+    fetchURL({text}) {
+       navigator.clipboard.writeText(text);
     }
     
 }
