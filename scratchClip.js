@@ -1,13 +1,11 @@
-header('Content-Type: application/javascript');
-
 class ScratchClip {
     constructor() {
     }
     
     getInfo() {
         return {
-            "id": "Add to Clipboard",
-            "name": "Add to Clipboard",
+            "id": "clip",
+            "name": "clip",
             "blocks": [
                         {
                             "opcode": "addToClip",
